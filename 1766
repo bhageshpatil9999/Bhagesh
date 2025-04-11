@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Do You Love Me?</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://i.imgur.com/0ZfFRnF.jpg'); /* Background with hearts & lilies */
+      background-size: cover;
+      background-position: center;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yesBtn {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+      color: black;
+      position: relative;
+    }
+  </style>
+</head>
+<body>
+  <h1>Swarali, do you love me?</h1>
+  <div class="button-container">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+
+    noBtn.addEventListener('mouseover', () => {
+      const randomX = Math.floor(Math.random() * 300) - 150;
+      const randomY = Math.floor(Math.random() * 300) - 150;
+      noBtn.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    });
+
+    yesBtn.addEventListener('click', () => {
+      document.body.innerHTML = `
+        <h1>Thank youuu! I love you more, Swarali!</h1>
+      `;
+    });
+  </script>
+</body>
+</html>
